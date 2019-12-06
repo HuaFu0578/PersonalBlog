@@ -1,0 +1,19 @@
+{
+  "name": "personalblog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HuaFu0578/PersonalBlog.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HuaFu0578/PersonalBlog/issues"
+  },
+  "homepage": "https://github.com/HuaFu0578/PersonalBlog#readme"
+}
