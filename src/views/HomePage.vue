@@ -3,7 +3,7 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-07 09:33:08
  * @LastEditors: your name
- * @LastEditTime: 2019-12-07 22:40:09
+ * @LastEditTime: 2019-12-08 08:44:38
  -->
 <template>
   <div class="home-page">
@@ -22,5 +22,3 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
-</style>

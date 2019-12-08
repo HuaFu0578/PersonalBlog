@@ -3,14 +3,17 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-07 19:01:03
  * @LastEditors: your name
- * @LastEditTime: 2019-12-07 22:19:21
+ * @LastEditTime: 2019-12-08 11:06:14
  -->
 <template>
   <aside>
     <aside-module #module head="标签云">
       <tag-list-module :tagList="tagList" />
     </aside-module>
-    <aside-module #module head="最新文章">
+    <aside-module #module head="技术分类">
+      <range-module :titleList="newArtList" />
+    </aside-module>
+    <aside-module #module head="特别推荐">
       <range-module :titleList="newArtList" />
     </aside-module>
     <aside-module #module head="最热文章">
@@ -21,7 +24,7 @@
 <script>
 import AsideModule from "./AsideModule";
 import RangeModule from "./RangeModule";
-import TagListModule from "./tagListModule";
+import TagListModule from "./TagListModule";
 export default {
   data() {
     return {

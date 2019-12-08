@@ -1,4 +1,6 @@
 /dist
+/PersonalBlog
+/personalBlog
 node_modules
 .DS_Store
 

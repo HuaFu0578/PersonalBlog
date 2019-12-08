@@ -3,7 +3,7 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-07 22:30:03
  * @LastEditors: your name
- * @LastEditTime: 2019-12-07 22:32:09
+ * @LastEditTime: 2019-12-08 08:44:57
  -->
 <template>
   <div class="wrapper">
@@ -35,7 +35,6 @@ export default {
     .main {
       flex: 1;
       min-width: 280px;
-      background-color: pink;
     }
 
     .aside-menu {
