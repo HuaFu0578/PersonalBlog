@@ -1,9 +1,9 @@
 <!--
  * @Description: file description
  * @Author: LiuHuaifu
- * @Date: 2019-12-08 15:49:07
+ * @Date: 2019-12-08 20:52:32
  * @LastEditors: your name
- * @LastEditTime: 2019-12-08 20:51:37
+ * @LastEditTime: 2019-12-08 20:55:03
  -->
 <template>
   <div class="study-wrap">
@@ -21,9 +21,9 @@ export default {
   data() {
     return {
       module: {
-        name: "学习笔记",
-        img:require('@/assets/img/studynote.png'),
-        intro: "学习笔记模块主要用来记录平时学习过程的经验，心得！"
+        name: "源码分析",
+        img: require("@/assets/img/sourcecode.png"),
+        intro: "源码分析模块主要用来记录学习探究各种框架语言源码的过程！"
       }
     };
   },

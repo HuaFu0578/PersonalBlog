@@ -1,9 +1,9 @@
 <!--
  * @Description: file description
  * @Author: LiuHuaifu
- * @Date: 2019-12-08 15:49:07
+ * @Date: 2019-12-08 20:59:37
  * @LastEditors: your name
- * @LastEditTime: 2019-12-08 20:51:37
+ * @LastEditTime: 2019-12-08 21:02:26
  -->
 <template>
   <div class="study-wrap">
@@ -21,9 +21,9 @@ export default {
   data() {
     return {
       module: {
-        name: "学习笔记",
-        img:require('@/assets/img/studynote.png'),
-        intro: "学习笔记模块主要用来记录平时学习过程的经验，心得！"
+        name: "问题探讨",
+        img: require("@/assets/img/qesdiscuss.png"),
+        intro: "问题模块主要用供大家提问交流，探讨，也有站主平时遇到的问题记录及解决方案。"
       }
     };
   },

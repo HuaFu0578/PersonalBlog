@@ -3,7 +3,7 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-08 11:08:44
  * @LastEditors: your name
- * @LastEditTime: 2019-12-08 15:41:40
+ * @LastEditTime: 2019-12-08 19:04:26
  -->
 <template>
   <div class="wrapper">
@@ -37,7 +37,7 @@ export default {
   transition: 0.3s linear box-shadow, 0.3s linear transform;
 
   &:hover {
-    box-shadow: 3px 4px 4px #777;
+    box-shadow: 3px 4px 4px #777,inset  2px 3px 1px rgb(167, 167, 167);
     transform: scale(1.01);
   }
 
@@ -148,7 +148,7 @@ export default {
         cursor: pointer;
 
         &:hover {
-            background-color: rgb(250, 144, 241);
+          background-color: rgb(250, 144, 241);
         }
       }
     }

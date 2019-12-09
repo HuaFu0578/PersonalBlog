@@ -3,7 +3,7 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-07 09:12:27
  * @LastEditors: your name
- * @LastEditTime: 2019-12-07 22:22:40
+ * @LastEditTime: 2019-12-08 16:59:34
  -->
 <template>
   <header class="header">
@@ -20,9 +20,9 @@
           <router-link tag="li" :to="{name:'studyNote'}" class="nav-item">学习笔记</router-link>
           <router-link tag="li" :to="{name:'sourceCode'}" class="nav-item">源码学习</router-link>
           <router-link tag="li" :to="{name:'qesDiscuss'}" class="nav-item">问题探讨</router-link>
+          <router-link tag="li" :to="{name:'liveRecord'}" class="nav-item">生活随记</router-link>
           <router-link tag="li" :to="{name:'about'}" class="nav-item">关于</router-link>
           <router-link tag="li" :to="{name:'msgBoard'}" class="nav-item">留言板</router-link>
-          <router-link tag="li" :to="{name:'studyNote'}" class="nav-item">其他</router-link>
         </ul>
         <div class="nav-search">
           <input type="text" placeholder="请输入关键字进行查找" v-model="navKeyWord" class="nav-keyword" />

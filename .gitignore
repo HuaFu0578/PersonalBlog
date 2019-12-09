@@ -2,6 +2,7 @@
 /PersonalBlog
 /personalBlog
 node_modules
+/help
 .DS_Store
 
 # local env files

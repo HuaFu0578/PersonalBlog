@@ -3,15 +3,12 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-07 19:01:03
  * @LastEditors: your name
- * @LastEditTime: 2019-12-08 11:06:14
+ * @LastEditTime: 2019-12-09 15:32:58
  -->
 <template>
   <aside>
     <aside-module #module head="标签云">
       <tag-list-module :tagList="tagList" />
-    </aside-module>
-    <aside-module #module head="技术分类">
-      <range-module :titleList="newArtList" />
     </aside-module>
     <aside-module #module head="特别推荐">
       <range-module :titleList="newArtList" />

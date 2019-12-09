@@ -3,20 +3,21 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-08 10:07:03
  * @LastEditors: your name
- * @LastEditTime: 2019-12-08 10:54:13
+ * @LastEditTime: 2019-12-09 13:42:26
  -->
 <template>
   <div class="line-title">
-    <div class="head">
+    <div class="head ">
       <h3>{{head}}</h3>
+      <router-link tag="div" :to="to || '/'" :style="to?'cursor:pointer':''" class="more" v-html="more"/>
     </div>
-    <slot/>
+    <slot name="module" />
   </div>
 </template>
 <script>
 export default {
-    props:["head"]
-}
+  props: ["head", "more", "to"]
+};
 </script>
 <style lang="scss" scoped>
 .line-title {
@@ -29,11 +30,18 @@ export default {
     width: 100%;
     border-bottom: 1px solid #eee;
     margin-bottom: 10px;
-
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
     h3 {
-      display: inline-block;
       padding: 5px;
       border-bottom: 2px solid #333;
+    }
+
+    .more {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }

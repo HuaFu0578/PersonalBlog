@@ -3,7 +3,7 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-06 10:17:40
  * @LastEditors: your name
- * @LastEditTime: 2019-12-07 20:41:24
+ * @LastEditTime: 2019-12-08 22:18:02
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -32,9 +32,13 @@ const routes = [{
     name: 'qesDiscuss',
     component: () => import('../views/QuestionDiscussion')
 }, {
+    path: '/liveRecord',
+    name: 'liveRecord',
+    component: () => import('../views/LiveRecord.vue')
+}, {
     path: '/About',
     name: 'about',
-    component: () => import('../views/About.vue')
+    component: () => import('../views/FormalArticle.vue')
 }, {
     path: '/msgBoard',
     name: 'msgBoard',
