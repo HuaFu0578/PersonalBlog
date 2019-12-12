@@ -3,13 +3,13 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-08 20:52:32
  * @LastEditors: your name
- * @LastEditTime: 2019-12-08 20:55:03
+ * @LastEditTime: 2019-12-11 20:21:48
  -->
 <template>
   <div class="study-wrap">
     <module-introduce :module="module" />
     <deadline-title head="本栏文章" #module>
-      <article-list :articleList="articleList" />
+      <article-list :articleList="articleList" :readArticle="readArticle"/>
     </deadline-title>
   </div>
 </template>
@@ -27,7 +27,7 @@ export default {
       }
     };
   },
-  props: ["articleList"],
+  props: ["articleList","readArticle"],
   components: {
     ArticleList,
     DeadlineTitle,
