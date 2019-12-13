@@ -3,20 +3,20 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-08 20:52:32
  * @LastEditors: your name
- * @LastEditTime: 2019-12-11 20:21:48
+ * @LastEditTime: 2019-12-13 15:49:26
  -->
 <template>
   <div class="study-wrap">
     <module-introduce :module="module" />
     <deadline-title head="本栏文章" #module>
-      <article-list :articleList="articleList" :readArticle="readArticle"/>
+      <article-list :articleList="articleList" />
     </deadline-title>
   </div>
 </template>
 <script>
-import DeadlineTitle from "../DeadlineTitle";
-import ArticleList from "../ArticleList";
-import ModuleIntroduce from "../ModuleIntroduce";
+import DeadlineTitle from "../common/DeadlineTitle";
+import ArticleList from "../common/article/ArticleList";
+import ModuleIntroduce from "../common/ModuleIntroduce";
 export default {
   data() {
     return {
@@ -27,7 +27,7 @@ export default {
       }
     };
   },
-  props: ["articleList","readArticle"],
+  props: ["articleList"],
   components: {
     ArticleList,
     DeadlineTitle,
