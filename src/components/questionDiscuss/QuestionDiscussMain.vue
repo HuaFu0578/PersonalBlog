@@ -3,31 +3,32 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-08 20:59:37
  * @LastEditors: your name
- * @LastEditTime: 2019-12-11 21:20:01
+ * @LastEditTime: 2019-12-13 15:50:03
  -->
 <template>
   <div class="study-wrap">
     <module-introduce :module="module" />
     <deadline-title head="本栏文章" #module>
-      <article-list :articleList="articleList" :readArticle="readArticle"/>
+      <article-list :articleList="articleList" />
     </deadline-title>
   </div>
 </template>
 <script>
-import DeadlineTitle from "../DeadlineTitle";
-import ArticleList from "../ArticleList";
-import ModuleIntroduce from "../ModuleIntroduce";
+import DeadlineTitle from "../common/DeadlineTitle";
+import ArticleList from "../common/article/ArticleList";
+import ModuleIntroduce from "../common/ModuleIntroduce";
 export default {
   data() {
     return {
       module: {
         name: "问题探讨",
         img: require("@/assets/img/qesdiscuss.png"),
-        intro: "问题模块主要用供大家提问交流，探讨，也有站主平时遇到的问题记录及解决方案。"
+        intro:
+          "问题模块主要用供大家提问交流，探讨，也有站主平时遇到的问题记录及解决方案。"
       }
     };
   },
-  props: ["articleList","readArticle"],
+  props: ["articleList"],
   components: {
     ArticleList,
     DeadlineTitle,
