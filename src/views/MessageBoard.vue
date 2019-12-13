@@ -3,7 +3,7 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-07 18:54:55
  * @LastEditors: your name
- * @LastEditTime: 2019-12-08 17:10:06
+ * @LastEditTime: 2019-12-12 21:36:03
  -->
 <template>
   <div class="message-board">
@@ -13,12 +13,10 @@
   </div>
 </template>
 <script>
-import BodyBlock from "../components/BodyBlock";
-import StudyMain from "../components/studyNote/StudyMain";
+import BodyBlock from "../components/common/BodyBlock";
 export default {
   components: {
-    BodyBlock,
-    StudyMain
+    BodyBlock
   }
 };
 </script>
