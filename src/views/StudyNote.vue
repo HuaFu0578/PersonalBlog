@@ -3,55 +3,31 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-07 15:43:55
  * @LastEditors: your name
- * @LastEditTime: 2019-12-12 17:19:05
+ * @LastEditTime: 2019-12-13 13:30:33
  -->
 <template>
   <div class="study-note">
-    <div class="main">
-      <body-block #module>
-        <study-main :articleList="articleList" :readArticle="readArticle" />
-        <!-- <router-view ></router-view> -->
-      </body-block>
+    <header-bar />
+    <div class="wrapper">
+      <router-view></router-view>
     </div>
+    <footer-bar />
   </div>
 </template>
 <script>
-import BodyBlock from "../components/BodyBlock";
-import StudyMain from "../components/studyNote/StudyMain";
-import { mapGetters } from "vuex";
+import HeaderBar from "../components/common/HeaderBar";
+import FooterBar from "../components/common/FooterBar";
+
 export default {
-  data() {
-    return {
-      articleList: []
-    };
-  },
-  computed: {
-    ...mapGetters(["siteConfig"])
-  },
   components: {
-    BodyBlock,
-    StudyMain
-  },
-  created() {
-    this.$axios
-      .get(this.siteConfig.getArticleByType, {
-        params: { type: "学习笔记", page: 1, pageSize: 10 }
-      })
-      .then(res => {
-        let data = res.data.data;
-        this.articleList = data;
-      });
-  },
-  methods: {
-    readArticle(article) {
-      this.$store.commit("changeCurModule", "学习笔记");
-      this.$store.commit("setCurArticle", article);
-    }
+    HeaderBar,
+    FooterBar
   }
 };
 </script>
 <style lang="scss" scoped>
-.study-note {
-  width: 100%;
+.wrapper {
+  width: 1170px;
+  margin: 20px auto;
 }
 </style>
