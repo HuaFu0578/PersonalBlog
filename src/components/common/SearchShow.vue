@@ -3,13 +3,13 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-13 19:25:57
  * @LastEditors: your name
- * @LastEditTime: 2019-12-13 19:58:29
+ * @LastEditTime: 2019-12-16 12:44:43
  -->
 <template>
   <div class="search-show">
     <div class="main">
       <body-block #module>
-        <location :pathList="pathList" />
+        <location  />
         <deadline-title
           :head="head"
           #module
@@ -18,7 +18,7 @@
             &nbsp;${resultCount}&nbsp;
             </span>篇`"
         >
-          <article-list :articleList="articleList" />
+          <article-list :api="api" @localCount="localCount" />
         </deadline-title>
       </body-block>
     </div>
@@ -29,25 +29,24 @@ import BodyBlock from "../../components/common/BodyBlock";
 import ArticleList from "../../components/common/article/ArticleList";
 import DeadlineTitle from "../../components/common/DeadlineTitle";
 import Location from "../../components/common/Location";
-import { mapGetters, mapState } from "vuex";
-
 export default {
   data() {
     return {
-      pathList: [
-        { to: "/studyNote", name: "学习笔记" },
-        { to: "/sourceCode", name: "源码分析" },
-        { to: "/liveRecord", name: "生活随记" }
-      ]
+      resultCount: 0
     };
   },
-  props: ["head", "resultCount", "articleList"],
+  props: ["head","api"],
   components: {
     BodyBlock,
     ArticleList,
     DeadlineTitle,
     Location
-  }
+  },
+  methods: {
+    localCount(val) {
+      this.resultCount = val;
+    }
+  },
 };
 </script>
 <style lang="scss" scoped>

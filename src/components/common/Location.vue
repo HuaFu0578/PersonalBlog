@@ -3,21 +3,33 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-08 21:37:58
  * @LastEditors: your name
- * @LastEditTime: 2019-12-13 22:41:14
+ * @LastEditTime: 2019-12-16 10:50:19
  -->
 <template>
   <div class="location">
     您现在的位置：
     <router-link
-      :to="path.to||'/'"
+      :to="path.to||$route.fullPath"
       v-for="(path,index) in pathList"
       :key="index"
     >{{path.name}}{{toRight(index)}}</router-link>
   </div>
 </template>
 <script>
+import { match } from "minimatch";
 export default {
-  props: ["pathList"],
+  computed: {
+    pathList() {
+      let matches = this.$route.matched;
+      let tempArr = [];
+      for (let i = 0; i < matches.length; i++) {
+        if (matches[i].meta) {
+          tempArr.push({ name: matches[i].meta.name, to: matches[i].meta.to });
+        }
+      }
+      return tempArr;
+    }
+  },
   methods: {
     toRight(index) {
       return index < this.pathList.length - 1 ? " / " : "";

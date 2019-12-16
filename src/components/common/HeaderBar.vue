@@ -3,7 +3,7 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-07 09:12:27
  * @LastEditors: your name
- * @LastEditTime: 2019-12-13 20:20:58
+ * @LastEditTime: 2019-12-14 14:18:51
  -->
 <template>
   <header class="header">
@@ -76,6 +76,7 @@ export default {
   }
 };
 </script>
+
 <style lang="scss" scoped>
 .header {
   width: 100%;
@@ -123,7 +124,7 @@ export default {
   //导航栏区
   .nav-bar {
     $nav-height: 50px; //导航栏高度
-    $nav-gap: 40px; //导航菜单间隔
+    $nav-gap: 30px; //导航菜单间隔
 
     width: 100%;
     background-color: rgb(238, 253, 198);
@@ -147,6 +148,11 @@ export default {
         .nav-item {
           float: left;
           margin: 0 $nav-gap/2;
+          padding: 0 8px;
+
+          &.exact-active {
+            background-color: #6cd9dd;
+          }
 
           &:hover {
             color: #f00;
