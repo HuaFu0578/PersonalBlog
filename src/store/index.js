@@ -3,7 +3,7 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-06 10:17:32
  * @LastEditors: your name
- * @LastEditTime: 2019-12-13 20:07:03
+ * @LastEditTime: 2019-12-16 12:19:37
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -22,10 +22,13 @@ export default new Vuex.Store({
             getArticleById: '/PersonalBlog/getArticleById', //通过文章id获取文章
             getArticleByType: '/PersonalBlog/getArticleByType', //通过分类类型获取文章
             getArticleByTag: '/PersonalBlog/getArticleByTag', //通过标签类型获取文章
-            // getArticleByViews: '/PersonalBlog/getArticleByViews', //通过浏览量获取文章
-            getArticleListByKeyWords: '/PersonalBlog/getArticleListByKeyWords',//通过文章关键词和标签获取文章列表
+            getArticleListByKeyWords: '/PersonalBlog/getArticleListByKeyWords', //通过文章关键词和标签获取文章列表
+            getArticleCount: "/PersonalBlog/getArticleCount", //获取所有文章数量
+            getArticleCountByType: "/PersonalBlog/getArticleCountByType", //获取指定类型的所有文章数量
+            getArticleCountByKeyWords: "/PersonalBlog/getArticleCountByKeyWords", //获取指定关键词的所有文章数量
+            getArticleCountByTag: "/PersonalBlog/getArticleCountByTag", //获取相应标签对应的文章数量 TODO:
             addComment: '/PersonalBlog/addComment', //添加评论
-            // modifyComment: '/PersonalBlog/modifyComment', //修改评论
+            modifyComment: '/PersonalBlog/modifyComment', //修改评论 TODO:
             getComment: '/PersonalBlog/getComment', //通过文章获取相关的评论
             getCommentCount: '/PersonalBlog/getCommentCount', //获取相应文章的总评论条数
             setArticleViews: '/PersonalBlog/setArticleViews', //浏览量累加
