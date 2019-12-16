@@ -3,13 +3,13 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-08 21:03:11
  * @LastEditors: your name
- * @LastEditTime: 2019-12-13 15:50:43
+ * @LastEditTime: 2019-12-16 10:29:22
  -->
 <template>
   <div class="study-wrap">
     <module-introduce :module="module" />
     <deadline-title head="本栏文章" #module>
-      <article-list :articleList="articleList" />
+      <article-list :api="api" />
     </deadline-title>
   </div>
 </template>
@@ -17,6 +17,7 @@
 import DeadlineTitle from "../common/DeadlineTitle";
 import ArticleList from "../common/article/ArticleList";
 import ModuleIntroduce from "../common/ModuleIntroduce";
+import { mapGetters } from "vuex";
 export default {
   data() {
     return {
@@ -27,7 +28,19 @@ export default {
       }
     };
   },
-  props: ["articleList"],
+  computed: {
+    ...mapGetters(["siteConfg"]),
+    api() {
+      return {
+        getArticle: this.siteConfig.getArticleByType,
+        getArticleCount: this.siteConfig.getArticleCountByType,
+        params: {
+          getArticle: { type: "生活随记" },
+          getArticleCount: { type: "生活随记" }
+        }
+      };
+    }
+  },
   components: {
     ArticleList,
     DeadlineTitle,
