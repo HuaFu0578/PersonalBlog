@@ -3,7 +3,7 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-06 10:17:40
  * @LastEditors: your name
- * @LastEditTime: 2019-12-13 22:11:24
+ * @LastEditTime: 2019-12-14 14:10:17
  */
 import Vue from 'vue'
 import VueRouter from 'vue-router'
@@ -14,22 +14,29 @@ Vue.use(VueRouter);
 const routes = [{
     path: '/',
     component: HomePage,
+    meta: {
+        name: '首页',
+        to: {
+            name: 'home'
+        }
+    },
     children: [{ //首页
         path: '',
         name: 'home',
         component: HomeWrap,
-        meta: {
-            name: '首页'
-        }
+
     }, {
         path: 'article',
         name: 'home_article',
+        meta: {
+            name: "文章展示",
+        },
         component: () => import('../views/subViews/FormalArticle.vue'),
     }, {
         path: 'tags/:count',
         name: 'tagClassify',
         meta: {
-            name: "标签搜索"
+            name: "标签搜索",
         },
         component: () => import('../views/subViews/TagSearch.vue')
     }, {
@@ -52,70 +59,94 @@ const routes = [{
             name: 'home_article'
         }
     }]
-}, {
+}, { //首页重定向
     path: '/home',
     redirect: '/'
 }, { //学习笔记
     path: '/studyNote',
+    meta: {
+        name: '学习笔记',
+        to: {
+            name: 'studyNote'
+        }
+    },
     component: () => import('../views/StudyNote.vue'),
     children: [{
             path: '',
             name: 'studyNote',
-            meta: {
-                name: '学习笔记'
-            },
             component: () => import('../views/subViews/StudyNoteWrap.vue')
         },
         {
             path: 'article',
             name: 'studyNote_article',
+            meta: {
+                name: '文章展示',
+            },
             component: () => import('../views/subViews/FormalArticle.vue'),
         }
     ]
 }, { //源码学习
     path: '/sourceCode',
+    meta: {
+        name: '源码学习',
+        to: {
+            name: 'sourceCode'
+        }
+    },
     component: () => import('../views/SourceCode.vue'),
     children: [{
         path: '',
         name: 'sourceCode',
-        meta: {
-            name: '源码学习'
-        },
         component: () => import('../views/subViews/SourceCodeWrap.vue')
     }, {
         path: 'article',
         name: 'sourceCode_article',
+        meta: {
+            name: "文章展示"
+        },
         component: () => import('../views/subViews/FormalArticle.vue'),
     }]
 }, { //问题探讨
     path: '/questionDiscuss',
+    meta: {
+        name: '问题探讨',
+        to: {
+            name: 'questionDiscuss'
+        }
+    },
     component: () => import('../views/QuestionDiscussion.vue'),
     children: [{
         path: '',
         name: 'questionDiscuss',
-        meta: {
-            name: '问题探讨'
-        },
         component: () => import('../views/subViews/QuestionDiscussWrap.vue')
 
     }, {
         path: 'article',
         name: 'questionDiscuss_article',
+        meta: {
+            name: '文章展示'
+        },
         component: () => import('../views/subViews/FormalArticle.vue'),
     }]
 }, { //生活随记
     path: '/liveRecord',
+    meta: {
+        name: '生活随记',
+        to: {
+            name: 'liveRecord'
+        }
+    },
     component: () => import('../views/LiveRecord.vue'),
     children: [{
         path: '',
         name: 'liveRecord',
-        meta: {
-            name: '生活随记'
-        },
         component: () => import('../views/subViews/LiveRecordWrap.vue')
     }, {
         path: 'article',
         name: 'liveRecord_article',
+        meta: {
+            name: '文章展示'
+        },
         component: () => import('../views/subViews/FormalArticle.vue'),
     }]
 }, { //关于
