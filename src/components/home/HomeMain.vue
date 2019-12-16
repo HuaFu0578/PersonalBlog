@@ -3,14 +3,16 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-07 22:38:01
  * @LastEditors: your name
- * @LastEditTime: 2019-12-13 15:48:51
+ * @LastEditTime: 2019-12-14 16:35:56
  -->
 <template>
   <div class="main-section">
     <div class="slider">轮播图</div>
     <div class="last-article">
       <deadline-title head="最近更新" #module>
-        <article-list :articleList="articleList" />
+        <article-list
+          :api="{getArticle:siteConfig.getArticle,getArticleCount:siteConfig.getArticleCount}"
+        />
       </deadline-title>
     </div>
   </div>
@@ -18,8 +20,11 @@
 <script>
 import DeadlineTitle from "../../components/common/DeadlineTitle";
 import ArticleList from "../../components/common/article/ArticleList";
+import { mapGetters } from "vuex";
 export default {
-  props: ["articleList"],
+  computed: {
+    ...mapGetters(["siteConfig"])
+  },
   components: {
     DeadlineTitle,
     ArticleList
