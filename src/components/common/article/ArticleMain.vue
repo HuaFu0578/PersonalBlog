@@ -7,7 +7,7 @@
  -->
 <template>
   <div class="art-main">
-    <location :pathList="pathList" />
+    <location />
     <article-show class="artshow" :article="article" />
     <deadline-title
       #module
@@ -46,7 +46,7 @@ export default {
     ...mapState(["curComment", "curCommentCount"]),
     ...mapGetters(["siteConfig"])
   },
-  props: ["pathList", "article"],
+  props: ["article"],
   components: {
     Location,
     ArticleShow,
