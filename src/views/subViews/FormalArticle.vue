@@ -3,13 +3,13 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-08 20:47:30
  * @LastEditors: your name
- * @LastEditTime: 2019-12-13 17:18:52
+ * @LastEditTime: 2019-12-16 13:11:27
  -->
 <template>
   <div class="formal-article">
     <div class="main">
       <body-block #module>
-        <article-main :pathList="pathList" :article="curArticle" />
+        <article-main :article="curArticle" />
       </body-block>
     </div>
   </div>
@@ -20,17 +20,8 @@ import ArticleMain from "../../components/common/article/ArticleMain";
 import { mapGetters, mapState } from "vuex";
 
 export default {
-  data() {
-    return {
-      pathList: [
-        { to: "/studyNote", name: "学习笔记" },
-        { to: "/sourceCode", name: "源码分析" },
-        { to: "/liveRecord", name: "生活随记" }
-      ]
-    };
-  },
   computed: {
-    ...mapState(["curArticle", "door"]),
+    ...mapState(["curArticle"]),
     ...mapGetters(["siteConfig"])
   },
   components: {
@@ -68,10 +59,12 @@ export default {
   beforeRouteEnter(to, from, next) {
     next(vm => {
       //如果当前文章是被浏览器强制刷新了，则通过url参数重新获取文章
-      if (!from.name) {
-        vm.getArticleByIdAndSetViews(
-          to.params.article_id || to.query.article_id
-        );
+      let article_id = to.params.article_id || to.query.article_id;
+      if (
+        !from.name ||
+        (!vm.curArticle.content || vm.curArticle.id != article_id) //如果强制刷新，当前缓存文章没有内容或者缓存文章id与路由参数id不相等，则重新请求文章
+      ) {
+        vm.getArticleByIdAndSetViews(article_id);
       } else {
         vm.setViews();
       }
