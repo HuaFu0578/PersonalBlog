@@ -3,21 +3,15 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-06 10:14:24
  * @LastEditors: your name
- * @LastEditTime: 2019-12-07 19:52:29
+ * @LastEditTime: 2019-12-13 13:31:20
  -->
 <template>
   <div id="app">
-    <home />
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
-<script>
-import Home from "./views/Home.vue";
-export default {
-  components: {
-    Home
-  }
-};
-</script>
 //元素样式设置
 <style>
 #app {

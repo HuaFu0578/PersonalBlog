@@ -3,7 +3,7 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-07 08:36:24
  * @LastEditors: your name
- * @LastEditTime: 2019-12-08 14:48:24
+ * @LastEditTime: 2019-12-12 21:53:35
  */
 const path = require('path');
 
@@ -12,7 +12,7 @@ const CompressionPlugin = require("compression-webpack-plugin");
 const isProduction = process.env.NODE_ENV === 'production';
 
 module.exports = {
-    publicPath: isProduction ? '/PersonalBlog' : '',
+    publicPath: isProduction ? '/PersonalBlog' : '/',
 
     productionSourceMap: false,
 
@@ -27,5 +27,5 @@ module.exports = {
             minRatio: 0.8,
             deleteOriginalAssets: false,
         }));
-    }
+    },
 }
