@@ -2,8 +2,6 @@
  * @Description: file description
  * @Author: LiuHuaifu
  * @Date: 2019-12-08 21:03:11
- * @LastEditors: your name
- * @LastEditTime: 2019-12-16 10:29:22
  -->
 <template>
   <div class="study-wrap">
@@ -29,7 +27,7 @@ export default {
     };
   },
   computed: {
-    ...mapGetters(["siteConfg"]),
+    ...mapGetters(["siteConfig"]),
     api() {
       return {
         getArticle: this.siteConfig.getArticleByType,

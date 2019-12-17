@@ -2,8 +2,6 @@
  * @Description: file description
  * @Author: LiuHuaifu
  * @Date: 2019-12-06 10:17:32
- * @LastEditors: your name
- * @LastEditTime: 2019-12-16 12:19:37
  */
 import Vue from 'vue'
 import Vuex from 'vuex'
@@ -12,7 +10,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        host: 'http://127.0.0.1:3000',
+        host: 'https://hfullest.com',
         API: {
             addDailySentence: '/PersonalBlog/addDailySentence', //添加每日一句
             getDailySentence: '/PersonalBlog/getDailySentence', //获取每日一句

@@ -3,7 +3,7 @@
  * @Author: LiuHuaifu
  * @Date: 2019-12-07 09:12:27
  * @LastEditors: your name
- * @LastEditTime: 2019-12-14 14:18:51
+ * @LastEditTime: 2019-12-16 23:04:48
  -->
 <template>
   <header class="header">
@@ -22,7 +22,7 @@
           <router-link tag="li" :to="{name:'questionDiscuss'}" class="nav-item">问题探讨</router-link>
           <router-link tag="li" :to="{name:'liveRecord'}" class="nav-item">生活随记</router-link>
           <router-link tag="li" :to="{name:'about'}" class="nav-item">关于</router-link>
-          <router-link tag="li" :to="{name:'msgBoard'}" class="nav-item">留言板</router-link>
+          <!-- <router-link tag="li" :to="{name:'msgBoard'}" class="nav-item">留言板</router-link> -->
         </ul>
         <div class="nav-search">
           <input type="text" placeholder="请输入关键字进行查找" v-model="navKeyWord" class="nav-keyword" />
